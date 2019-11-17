@@ -4,10 +4,10 @@ export interface Options {
   trustProxy: boolean | ((remoteAddress: string | undefined) => boolean)
 }
 
-const hostname = <I extends IncomingMessage>(
-  innerListener: (req: I & { hostname?: string }, res: ServerResponse) => void,
+const hostname = <I extends IncomingMessage, R extends ServerResponse>(
+  innerListener: (req: I & { hostname?: string }, res: R) => void,
   options?: Partial<Options>
-): ((req: I, res: ServerResponse) => void) => {
+): ((req: I, res: R) => void) => {
   const _options: Options = { trustProxy: false, ...options }
   const trustFn =
     typeof _options.trustProxy === "function"
