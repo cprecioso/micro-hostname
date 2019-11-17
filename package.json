@@ -1,6 +1,6 @@
 {
   "name": "micro-hostname",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Micro middleware to get the hostname of the request",
   "keywords": [
     "host",
