@@ -1,0 +1,5 @@
+{
+  "extends": "@cprecioso/tsconfig/esm",
+  "include": ["src/**/*"],
+  "compilerOptions": { "declaration": true }
+}
